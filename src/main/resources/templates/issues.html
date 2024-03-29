@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+
+    <head>
+        <title>Books</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1> Issues </h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Id reader</th>
+                <th>Id book</th>
+                <th>Time</th>
+            </tr>
+            <tr th:each="issue : ${issues}">
+                <td th:text="${issue.getId()}"></td>
+                <td><a th:href="@{/issues{id}(id=${issue.getId()})}" th:text="${issue.getIdReader}"></a></td>
+                <td><a th:href="@{/issues{id}(id=${issue.getId()})}" th:text="${issue.getIdBook}"></a></td>
+                <td><a th:href="@{/issues{id}(id=${issue.getId()})}" th:text="${issue.getTime}"></a></td>
+            </tr>
+        </table>
+    </body>
+</html>

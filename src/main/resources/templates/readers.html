@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+
+    <head>
+        <title>Books</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1> Readers </h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name reader</th>
+            </tr>
+            <tr th:each="reader : ${readers}">
+                <td th:text="${reader.getId()}"></td>
+                <td><a th:href="@{/readers/{id}(id=${reader.getId()})}" th:text="${reader.getName}"></a></td>
+            </tr>
+        </table>
+    </body>
+</html>
